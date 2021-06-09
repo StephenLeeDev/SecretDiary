@@ -4,15 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3f51b5"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/the_secret_garden"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintStart_toStartOf="@id/constraintLayoutRock"
+        app:layout_constraintEnd_toEndOf="@id/constraintLayoutRock"
+        app:layout_constraintBottom_toTopOf="@id/constraintLayoutRock"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutRock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#cdcdcd"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonOpen"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="16dp"
+            android:background="#a3a3a3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayoutNumbers"
+            app:layout_constraintTop_toTopOf="@id/linearLayoutNumbers"
+            app:layout_constraintBottom_toBottomOf="@id/linearLayoutNumbers"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/buttonOpen"
+            app:layout_constraintStart_toStartOf="@id/buttonOpen"
+            app:layout_constraintEnd_toEndOf="@id/buttonOpen"
+            />
+        
+        <LinearLayout
+            android:id="@+id/linearLayoutNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+            
+            <NumberPicker
+                android:id="@+id/numberPicker1"
+                android:layout_width="30dp"
+                android:layout_height="120dp"
+                android:background="#a3a3a3"
+                />
+
+            <NumberPicker
+                android:id="@+id/numberPicker2"
+                android:layout_width="30dp"
+                android:layout_height="120dp"
+                android:background="#a3a3a3"
+                />
+
+            <NumberPicker
+                android:id="@+id/numberPicker3"
+                android:layout_width="30dp"
+                android:layout_height="120dp"
+                android:background="#a3a3a3"
+                />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
